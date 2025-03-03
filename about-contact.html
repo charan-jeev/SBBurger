@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About & Contact</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas+Neue">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="about-contact.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header class="header" id="header">
+		<nav class="nav container">
+			<a href="homepage.html" class="nav_logo">
+				<div>
+					<img src="logo.png" alt="logo">
+				</div>
+			</a>
+			<div class="nav_menu" id="nav-menu">
+				<ul class="nav_list">
+						<li><a href="homepage.html" class="nav_link">Home</a></li>
+						<li><a href="#" class="nav_link">Menu</a></li>
+						<li><a href="#" class="nav_link">Order</a></li>
+				</ul>
+				<div class="nav_close" id="nav-close">
+				<img src="close-large-line.png">
+			</div>
+			</div>
+		
+			<div class="nav_toggle" id="nav-toggle">
+				<img src="apps-fill.png">
+			</div>
+		</nav>
+	</header>
+<main class="main">	
+</main>	
+	<script src="main.js"></script>
+  <div class="container">
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="#" alt="SB Burger Shop" class="about-image img-fluid">
+            </div>
+            <div class="col-md-8">
+              <h2 class="section-title"><span class="underline">About</span> Us</h2>
+                <div class="about-content">
+                    <p>Welcome to SB Burger Shop, home of the legendary <span class="sauce-highlight">special sauce</span>! We believe that a great burger starts with fresh, high-quality ingredients and ends with the perfect sauce.</p>
+                    <p>Our secret house-made sauce is what sets us apart—it's tangy, creamy, and packed with flavor, making every bite unforgettable.</p>
+                    <p>Whether you're a fan of the classic cheeseburger or want to try one of our gourmet creations, we've got something for everyone. Come visit us and taste the difference!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <h2 class="section-title contact-title"><span class="underline">Contact</span> Us</h2>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <span class="info-item-title"><i class="fa fa-map-marker"></i> Address</span>
+                        <p>1723 A. Cruz st. Punta Sta Ana Manila</p>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-title"><i class="fa fa-phone"></i> Phone</span>
+                        <p>09991707464</p>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-item-title"><i class="fa fa-envelope"></i> Email</span>
+                        <p>azgrid07@gmail.com</p>
+                    </div>
+                    <div class="social-media">
+                        <span class="info-item-title">Follow Us on Social Media!</span>
+                        <p><a href="#" class="fa fa-facebook" aria-label="Follow us on Facebook"></a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="contact-form">
+                    <h3 class="text-center">We'd love to hear from you!</h3>
+                    <form id="contactForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                              <label for="name">Your Name</label>
+                              <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                              <span id="name-error" class="error-message"></span>
+                            </div>
+                            <div class="col-md-6">
+                              <label for="email">Your Email</label>
+                              <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                              <span id="email-error" class="error-message"></span>
+                            </div>
+                        </div>
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" class="form-control" placeholder="Subject" required>
+                        <span id="subject-error" class="error-message"></span>
+                        
+                        <label for="message">Your Message</label>
+                        <textarea id="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                        <span id="message-error" class="error-message"></span>
+                        
+                        <button type="submit" class="btn btn-submit">Send Message</button>
+                    </form>
+                   <div id="form-feedback" class="alert alert-success" style="display:none;">
+                    Thank you for your message! We will get back to you soon.
+                  </div>
+              </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <script src="about-contact.js"></script>    
+</body>
+</html>

@@ -1,0 +1,174 @@
+:root {
+  --primary-orange: #FF8731;
+  --primary-green: #1A8738;
+  --primary-brown: #512314;
+  --bg-light: #fdf6f0;
+}
+
+/* Global Styles */
+body {
+  background-color: var(--bg-light);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* FAQ Wrapper */
+.faq-wrapper {
+  padding: 60px 20px;
+}
+
+/* Left Side - FAQ Info */
+.faq-label {
+  background: #eee;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.faq-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: var(--primary-brown);
+}
+
+.faq-description {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Need Help Box */
+.faq-contact-box {
+  background: linear-gradient(135deg, rgba(255, 135, 49, 0.1), white);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  max-width: 320px;
+}
+
+.faq-contact-box h3 {
+  font-size: 1.5rem;
+  color: var(--primary-brown);
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--primary-brown);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.contact-info i {
+  color: var(--primary-green);
+  font-size: 1.2rem;
+}
+
+.btn-contact {
+  background-color: var(--primary-green);
+  color: white;
+  padding: 12px 18px;
+  margin-bottom: 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-contact:hover {
+  color: white;
+  background-color: rgb(3, 111, 3);
+  transform: scale(1.05);
+}
+
+/* FAQ Accordion (Bootstrap 4 Compatible) */
+.card {
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background: white;
+  transition: 0.3s ease-in-out;
+}
+
+.card-header {
+  background: #D4D7B6; /* Muted Sage Green */
+  padding: 0;
+  border-radius: 10px;
+}
+
+.card-header h5 {
+  margin: 0;
+}
+
+/* Accordion Buttons */
+.btn-link {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 18px 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-link:hover {
+  text-decoration: none;
+  color: var(--primary-brown);
+  background-color: #C4C8A4; /* Slightly darker muted green */
+}
+
+.btn-link:not(.collapsed) {
+  text-decoration: none;
+  color: var(--primary-brown);
+  background: linear-gradient(135deg, #D4D7B6, #C4C8A4); /* Soft gradient */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-link:focus, 
+.btn-link:hover, 
+.btn-link:not(.collapsed) {
+  text-decoration: none;
+}
+
+/* Accordion Body */
+.card-body {
+  background-color: var(--bg-light);
+  padding: 20px;
+  border-left: 4px solid #7A8450;
+}
+
+/* Remove Focus Outline */
+.btn-link:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .faq-wrapper {
+    text-align: center;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .faq-contact-box {
+    margin: 0 auto 30px auto;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
