@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Burger Joint</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #512314;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            border-bottom: 2px solid #FFAA01;
+        }
+        .header .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .nav {
+            margin-top: 60px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #512314;
+            margin: 0 15px;
+            font-size: 1.1em;
+        }
+        .menu-item {
+            border: 2px solid #D91604;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .menu-item img {
+            width: 150px; /* Fixed width */
+            height: 150px; /* Fixed height */
+            object-fit: cover; /* Ensures the image covers the fixed dimensions */
+            border-radius: 10px;
+        }
+        .menu-item.burger-bacon img {
+            width: 120px; /* Adjust width */
+            height: 120px; /* Adjust height */
+            object-fit: scale-down; /* Maintain aspect ratio */
+        }
+        .menu-item h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #512314;
+        }
+        .menu-item .price {
+            font-size: 1.2em;
+            color: #FF8731;
+            margin: 10px 0;
+        }
+        .menu-item .select-btn {
+            background-color: #1A8738;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 2px solid #1A8738;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Burger Joint</div>
+    </div>
+    <div class="container">
+        <div class="row nav justify-content-center">
+            <a href="home.html" class="col-auto">Home</a>
+            <a href="menu.html" class="col-auto">Menu</a>
+            <a href="order.html" class="col-auto">Order</a>
+            <a href="cart.html" class="col-auto">View Cart</a>
+            <a href="about.html" class="col-auto">About & Contact</a>
+            <a href="faq.html" class="col-auto">FAQ</a>
+            <a href="reviews.html" class="col-auto">Reviews</a>
+        </div>
+        <div class="row justify-content-center menu">
+            <div class="col-md-3 menu-item">
+                <img src="burger.jpg" alt="Burger">
+                <h3>Burger (Buy 1 Take 1)</h3>
+                <div class="price">₱50.00</div>
+                <button class="select-btn">Select</button>
+            </div>
+            <div class="col-md-3 menu-item burger-bacon">
+                <img src="burger_bacon.jpg" alt="Burger with Bacon">
+                <h3>Burger w/ Bacon</h3>
+                <div class="price">₱50.00</div>
+                <button class="select-btn">Select</button>
+            </div>
+            <div class="col-md-3 menu-item">
+                <img src="burger_egg.jpg" alt="Burger with Egg">
+                <h3>Burger w/ Egg</h3>
+                <div class="price">₱40.00</div>
+                <button class="select-btn">Select</button>
+            </div>
+            <div class="col-md-3 menu-item">
+                <img src="burger_cheese.jpg" alt="Burger with Cheese">
+                <h3>Burger w/ Cheese</h3>
+                <div class="price">₱38.00</div>
+                <button class="select-btn">Select</button>
+            </div>
+            <div class="col-md-3 menu-item">
+                <img src="ham_cheese.jpg" alt="Ham and Cheese">
+                <h3>Ham & Cheese</h3>
+                <div class="price">₱30.00</div>
+                <button class="select-btn">Select</button>
+            </div>
+            <div class="col-md-3 menu-item">
+                <img src="ham_egg_cheese.jpg" alt="Ham and Egg with Cheese">
+                <h3>Ham & Egg w/ Cheese</h3>
+                <div class="price">₱40.00</div>
+                <button class="select-btn">Select</button>
+            </div>
+            <div class="col-md-3 menu-item">
+                <img src="footlong.jpg" alt="Footlong">
+                <h3>Footlong</h3>
+                <div class="price">₱30.00</div>
+                <button class="select-btn">Select</button>
+            </div>
+            <div class="col-md-3 menu-item">
+                <img src="footlong_bacon.jpg" alt="Footlong with Bacon">
+                <h3>Footlong w/ Bacon</h3>
+                <div class="price">₱50.00</div>
+                <button class="select-btn">Select</button>
+            </div>
+            <div class="col-md-3 menu-item">
+                <img src="fries.jpg" alt="Fries">
+                <h3>Fries</h3>
+                <div class="price">₱25.00</div>
+                <button class="select-btn">Select</button>
+            </div>
+            <div class="col-md-3 menu-item">
+                <img src="mojos.jpg" alt="Mojos">
+                <h3>Mojos</h3>
+                <div class="price">₱40.00</div>
+                <button class="select-btn">Select</button>
+            </div>
+            <div class="col-md-3 menu-item">
+                <img src="veggie.jpg" alt="Add on Veggie">
+                <h3>Add on Veggie</h3>
+                <div class="price">₱10.00</div>
+                <button class="select-btn">Select</button>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
