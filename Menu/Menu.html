@@ -76,7 +76,7 @@
     </div>
     <div class="container">
         <div class="row nav justify-content-center">
-            <a href="home.html" class="col-auto">Home</a>
+            <a href="index.html" class="col-auto">Home</a>
             <a href="menu.html" class="col-auto">Menu</a>
             <a href="order.html" class="col-auto">Order</a>
             <a href="cart.html" class="col-auto">View Cart</a>
@@ -157,5 +157,36 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttons = document.querySelectorAll(".select-btn");
+    
+            buttons.forEach(button => {
+                button.addEventListener("click", function () {
+                    const item = this.closest(".menu-item");
+                    const name = item.querySelector("h3").textContent;
+                    const price = item.querySelector(".price").textContent.replace("₱", "");
+                    const imageSrc = item.querySelector("img").src;
+    
+                    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+                    let existingItem = cart.find(cartItem => cartItem.name === name);
+                    if (existingItem) {
+                        if (existingItem.quantity < 5) {
+                            existingItem.quantity += 1;
+                        } else {
+                            alert("You can only add up to 5 of the same item.");
+                        }
+                    } else {
+                        cart.push({ name, price, imageSrc, quantity: 1 });
+                    }
+    
+                    localStorage.setItem("cart", JSON.stringify(cart));
+                    alert(`${name} added to cart!`);
+                });
+            });
+        });
+    </script>
+    
 </body>
 </html>

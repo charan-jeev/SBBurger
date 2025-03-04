@@ -1,20 +1,125 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Cart</title>
-    <link rel="stylesheet" href="cart.css">
+    <title>Cart - Burger Joint</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel = "stylesheet" href="cart.css" >
 </head>
 <body>
-    <div class="cart-page">
-        <h1>Your Cart</h1>
-        <ul class="cart-items"></ul>
-        <p>Total: $<span id="cart-total">0.00</span></p>
-        <button id="checkout">Checkout</button>
-        <button id="back-to-order">Back to Order</button>
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="nav_logo">
+                <div><img src="Images/logo.png" alt="logo"></div>
+            </a>
+            <ul class="nav_list">
+                <li><a href="index.html" class="nav_link">Home</a></li>
+                <li><a href="Menu/Menu.html" class="nav_link">Menu</a></li>
+                <li><a href="Order/order.html" class="nav_link">Order</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="cart-container">
+        <h2>Your Cart</h2>
+        <div class="cart-item">
+            <div>
+                <img src="burger.jpg" alt="Burger">
+                <span>Burger (Buy 1 Take 1) - ₱50.00</span>
+            </div>
+            <div class="quantity-control">
+                <button onclick="updateQuantity(this, -1)">-</button>
+                <span class="quantity">1</span>
+                <button onclick="updateQuantity(this, 1)">+</button>
+            </div>
+            <button onclick="removeItem(this)" class="btn btn-danger btn-sm">Remove</button>
+        </div>
+        <button class="checkout-btn">Proceed to Checkout</button>
     </div>
-    <script src="cart.js"></script>
+    
+    <script>
+        function updateQuantity(button, change) {
+            let quantityElement = button.parentElement.querySelector('.quantity');
+            let quantity = parseInt(quantityElement.textContent);
+            quantity = Math.min(5, Math.max(1, quantity + change));
+            quantityElement.textContent = quantity;
+        }
+        
+        function removeItem(button) {
+            button.parentElement.remove();
+        }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const cartContainer = document.getElementById("cart-items");
+            const clearCartBtn = document.getElementById("clear-cart");
+            const checkoutBtn = document.getElementById("checkout");
+
+            function loadCart() {
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                cartContainer.innerHTML = "";
+
+                if (cart.length === 0) {
+                    cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+                    return;
+                }
+
+                cart.forEach((item, index) => {
+                    const cartItem = document.createElement("div");
+                    cartItem.classList.add("cart-item");
+                    cartItem.innerHTML = `
+                        <img src="${item.imageSrc}" alt="${item.name}">
+                        <div>
+                            <h5>${item.name}</h5>
+                            <p>₱${item.price} x ${item.quantity} = ₱${(item.price * item.quantity).toFixed(2)}</p>
+                        </div>
+                        <div>
+                            <button onclick="updateQuantity(${index}, -1)">-</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="updateQuantity(${index}, 1)">+</button>
+                            <button onclick="removeItem(${index})">Remove</button>
+                        </div>
+                    `;
+                    cartContainer.appendChild(cartItem);
+                });
+            }
+
+            window.updateQuantity = function(index, change) {
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                if (cart[index]) {
+                    cart[index].quantity += change;
+                    if (cart[index].quantity < 1) cart.splice(index, 1);
+                    if (cart[index].quantity > 5) cart[index].quantity = 5;
+                    localStorage.setItem("cart", JSON.stringify(cart));
+                    loadCart();
+                }
+            };
+
+            window.removeItem = function(index) {
+                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                cart.splice(index, 1);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                loadCart();
+            };
+
+            clearCartBtn.addEventListener("click", function () {
+                localStorage.removeItem("cart");
+                loadCart();
+            });
+
+            checkoutBtn.addEventListener("click", function () {
+                if (localStorage.getItem("cart") === "[]") {
+                    alert("Your cart is empty!");
+                } else {
+                    alert("Proceeding to checkout...");
+                    localStorage.removeItem("cart");
+                    loadCart();
+                }
+            });
+
+            loadCart();
+        });
+    </script>
 </body>
 </html>
