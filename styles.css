@@ -33,11 +33,11 @@ p, body, span, div, a, button, input, textarea {
   font-weight: 400;
   font-style: normal;
 }
-.montserrat-<uniquifier> {
+.montserrat-uniquifier {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+  font-weight: weight;
+  font-style : normal;
 }
 
 
@@ -661,7 +661,7 @@ body {
 }
 .home_lettuce-1{
 	top: 4rem;
-	right: -3.5rem:
+	right: -3.5rem;
 }
 .home_lettuce-2{
 	left: -3.5rem;
