@@ -1,0 +1,37 @@
+/* Order Page (order.html) */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Page</title>
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+    <div class="menu">
+        <h1>Menu</h1>
+        <div class="items">
+            <div class="item" data-name="Burger" data-price="8.99">
+                <p>Burger - $8.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="item" data-name="Pizza" data-price="12.99">
+                <p>Pizza - $12.99</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <div class="cart-sidebar">
+        <h2>Cart</h2>
+        <ul class="cart-items"></ul>
+        <p>Total: $<span id="total-price">0.00</span></p>
+        <button id="view-cart">View Cart</button>
+        <button id="clear-cart">Clear Cart</button>
+    </div>
+    <script src="order.js"></script>
+</body>
+</html>
+
+
+
+
