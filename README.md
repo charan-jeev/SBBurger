@@ -1,2 +1,0 @@
-# SBBurger
-ITS_PROJECT
